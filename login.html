@@ -3,11 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/Vector.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Login</title>
 </head>
 <body>
-    
+    <div class="container">
+        <img class="icon" src="img/img.png" alt="icon">
+        <div class="wrapper-inputs">
+            <form action="login" id="loginForm" method="POST">
+                <input placeholder="Username" type="text" id="username" name="username" required />
+                <input placeholder="Password" type="password" id="password" name="password" required />
+                <button class="submit">Login</button>   
+            </form>
+        </div>
+    </div>
 
 <script src="js/script.js"></script>
 </body>
