@@ -4,11 +4,24 @@ const admin = {
 };
 let products = [];
 
+let usernameEntered;
+let passwordEntered;
+
+function initializerForm() {
+    let loginForm = document.getElementById("loginForm");
+    loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        usernameEntered = document.getElementById("username").value;
+        passwordEntered = document.getElementById("password").value;
+        verifyUser();
+        authentication();
+    });
+}
 
 function verifyUser() {
-    const promptUser = prompt("Your user");
-    const promptPassword = prompt("Your password");
-    return admin.email === promptUser && admin.password === promptPassword;
+    // const promptUser = prompt("Your user");
+    // const promptPassword = prompt("Your password");
+    return admin.email === usernameEntered && admin.password === passwordEntered;
 }
 
 function convertToString(object){
@@ -106,6 +119,9 @@ function pushToProducts(item){
     products.push(item);
 }
 
+document.addEventListener("DOMContentLoaded", (event) => {
+    console.log("DOM fully loaded and parsed");
+    initializerForm()
+    });
 
 
-authentication();
