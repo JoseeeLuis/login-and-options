@@ -3,7 +3,8 @@ const admin = {
     password: "1234",
 };
 let products = [];
-
+let userattempts = 1;
+let maxAttempts = 3;
 let usernameEntered;
 let passwordEntered;
 
@@ -74,29 +75,50 @@ function chooseOption(option){
     } 
 }
 
-function authentication() {
-    let maxAttempts = 3;
 
-    for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-    if (verifyUser()) {
-        const storedProducts = localStorage.getItem("products");
-        if (storedProducts) {
-        products = JSON.parse(storedProducts);
-        }
-        let answer = askToUser();
-        chooseOption(answer);
-        break;
-    }
-    else {
-    if (attempt < maxAttempts) {
-        alert(
-            `Authentication failed. You have ${maxAttempts - attempt} attempts`
-            );
-            } else {
-            alert(`Authentication failed. No attempts remaining.`);
-            }
-        }
-    }
+function authentication() {
+
+
+//     for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+//     console.log(attempt)
+//     if (verifyUser()) {
+//         const storedProducts = localStorage.getItem("products");
+//         if (storedProducts) {
+//         products = JSON.parse(storedProducts);
+//         }
+//         let answer = askToUser();
+//         chooseOption(answer);
+//         break;
+//     }
+//     else {
+//             if (attempt < maxAttempts) {
+//                 // Prompt user to try again and listen for the button click
+//                 alert(`Authentication failed. You have ${maxAttempts - attempt} attempts left.`);
+                const boton = document.querySelector(".submit");
+                boton.addEventListener("click", function(evento) {
+                    console.log("Button clicked");
+                    if (verifyUser()){
+                        const storedProducts = localStorage.getItem("products");
+                        if (storedProducts) {
+                        products = JSON.parse(storedProducts);
+                        }
+                        let answer = askToUser();
+                        chooseOption(answer)
+                    }
+                    else if(userattempts <= maxAttempts){
+                        console.log(`Authentication failed. You have ${maxAttempts - userattempts} attempts.`)
+                        userattempts++;
+                    }
+                    else{
+                            console.log(`Authentication failed. No attempts remaining.`)
+                        }
+                });
+
+//             } else {
+//                 alert(`Authentication failed. No attempts remaining.`);
+//             }
+//         }
+//     }
 }
 
 function getProductInfo() {
@@ -123,5 +145,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM fully loaded and parsed");
     initializerForm()
     });
+
 
 
