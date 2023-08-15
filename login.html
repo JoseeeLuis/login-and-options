@@ -11,7 +11,7 @@
     <title>Login</title>
 </head>
 <body>
-    <div class="container">
+    <!-- <div class="container-login">
         <img class="icon" src="img/img.png" alt="icon">
         <div class="wrapper-inputs">
             <form action="login" id="loginForm" method="POST">
@@ -19,8 +19,30 @@
                 <input placeholder="Password" type="password" id="password" name="password" required />
                 <button class="submit">Login</button>   
             </form>
+            
         </div>
+    </div> -->
+
+    <div class="container-register">
+        <img class="icon" src="img/img.png" alt="icon">
+        <div class="wrapper-inputs">
+            <form action="register" id="registerForm" method="POST">
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <input placeholder="Username" type="text" id="username" name="username" required >
+                <input placeholder="Password" type="password" id="password" name="password" required >
+                <div class="checkOffers">
+                    <input type="checkbox" name="offers" id="offers">
+                    <label for="offers">Would you like to receive our offers?</label>
+                </div>
+                <button class="submit-register">Register</button>   
+            </form>
+            <div class="redirection">
+                <p>don´t have an account?</p>
+                <p class="redirectionLogin">Login Here</p>
+            </div>
+        
     </div>
+
 
 <script src="js/script.js"></script>
 </body>

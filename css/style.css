@@ -6,7 +6,7 @@ body{
     justify-content: center;
     align-items: center;
 }  
-.container{
+/* .container-login{
     display: flex;
     width: 650px;
     height: 500px;
@@ -18,15 +18,36 @@ body{
     border-radius: 15px;
     background: #F3F3F3;
 }
+*/
+.container-register{
+    display: flex;
+    width: 650px;
+    height: 550px;
+    padding: 36px 0px;
+    flex-direction: column;
+    align-items: center;
+    gap: 38px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: #F3F3F3;
+}
+
 .icon{
     width: 160px;
     height: 160px;
     flex-shrink: 0;
 }
-.wrapper-inputs form{
+/* .wrapper-inputs #loginForm{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 22px;
+    justify-content: center;
+} */
+.wrapper-inputs #registerForm{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
     gap: 22px;
     justify-content: center;
 }
@@ -39,7 +60,16 @@ body{
     background: #D0CACA;
     border: none;
 }
-.wrapper-inputs input::placeholder{
+
+.checkOffers{
+    display:flex;
+    margin-bottom: 5px;
+}
+.checkOffers #offers{
+    width: 15px;
+}
+
+.wrapper-inputs input::placeholder, .checkOffers label{
     color: #6F6565;
     font-family: Inter;
     font-size: 16px;
@@ -47,7 +77,7 @@ body{
     font-weight: 400;
     line-height: normal;
 }
-.submit{
+/* .submit{
     display: flex;
     width: 385px;
     height: 57px;
@@ -64,6 +94,37 @@ body{
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+} */
+.submit-register{
+    display: flex;
+    width: 385px;
+    height: 57px;
+    padding: 7px 126px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    border: 8px solid #2e53f9;
+    background:#2e53f9;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.redirection{
+    display: flex;
+    align-items: end;
+    color: #6F6565;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.redirection .redirectionLogin{
+    margin-left: 10px;
 }
 
 @media only screen and (min-width:320px) and (max-width:768px) {
@@ -72,7 +133,7 @@ body{
         justify-content: center;
         align-items: center;
     }
-    .container{
+    .container-login{
     display: flex;
     width: 388px;
     padding: 36px 0px;
@@ -82,7 +143,7 @@ body{
     }
     .wrapper-inputs input{
     display: flex;
-    width: 315px;
+    width: 315  px;
     padding: 19px 17px;
     align-items: center;
     gap: 10px;
