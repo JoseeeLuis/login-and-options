@@ -35,9 +35,10 @@ function askToUser() {
             "0" Log out
             "1" Create Item
             "2" Show Products
-            "3" Delete all items`));
+            "3" Delete all items
+            "4" Delete a item`));
 
-        if (input === 0 || input === 1 || input === 2 || input===3 ) {
+        if (input === 0 || input === 1 || input === 2 || input===3 || input===4 ) {
             return input;
                 } else {
                 alert("Invalid option. Please choose a valid option.");
@@ -50,9 +51,13 @@ function showProducts(){
     alert(`The products crated are ${productsCrated}`)
 }   
 
-function deleteAllproducts(){
-    allProducts="[]"
+function deleteAllproducts() {
+    allProducts = "[]";
+    localStorage.setItem("products", allProducts);
+    products = []; 
+    alert("All products deleted successfully!");
 }
+
 function chooseOption(option){
     switch (option) {
         case 0: alert("Logged out successfully");
@@ -68,11 +73,33 @@ function chooseOption(option){
         
         case 3:deleteAllproducts();
             break;
+        
+        case 4: deleteProducts();
+        break;
 
         default:alert(`option invalid`)
         askToUser();
         chooseOption();
     } 
+}
+
+function deleteProducts() {
+    const productsCrated = JSON.parse(localStorage.getItem("products"));
+    
+    productsCrated.forEach((product, index) => {
+        alert(`${index} - ${product.itemName}`);
+    });
+
+    const indexToDelete = parseInt(prompt("Enter the index of the item to delete:"));
+    if (indexToDelete >= 0 && indexToDelete < productsCrated.length) {
+        const deletedProductName = productsCrated[indexToDelete].itemName;
+        productsCrated.splice(indexToDelete, 1);
+        localStorage.setItem("products", JSON.stringify(productsCrated));
+        alert(`Item "${deletedProductName}" deleted successfully!`);
+        showProducts(); // To display the updated list after deletion
+    } else {
+        alert("Invalid index. Item deletion canceled.");
+    }
 }
 
 
