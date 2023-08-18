@@ -1,0 +1,228 @@
+body{
+    background: linear-gradient(180deg, #2e53f9 0%, #1E1E1E 100%);
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}  
+.cards{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    transition: all 1s ease;
+    align-items: center;
+
+}
+
+.login{
+    background: linear-gradient(180deg, #F95B2E 0%, #1E1E1E 100%);  
+}
+
+.containerLogin{
+    position: absolute;
+    left: 3700px;
+    display: flex;
+    width: 650px;
+    height: 500px;
+    padding: 36px 0px;
+    flex-direction: column;
+    align-items: center;
+    gap: 38px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: #F3F3F3;
+}
+
+.containerLogin.active{
+    left: auto;
+}
+
+.containerRegister{
+    display: flex;
+    width: 650px;
+    height: 550px;
+    padding: 36px 0px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 38px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: #F3F3F3;
+    position: absolute;
+    transform:translateX(250%);
+}
+.containerRegister.active{
+    left: auto;
+    transform:translateX(0);
+}
+
+.icon.active{
+    width: 160px;
+    height: 160px;
+    flex-shrink: 0;
+}
+.containerLogin .wrapper-inputs #loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 22px;
+    justify-content: center;
+}
+.containerRegister .wrapper-inputs #registerForm{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 22px;
+    justify-content: center;
+}
+.wrapper-inputs input{
+    display: flex;
+    width: 350px;
+    padding: 19px 17px;
+    align-items: center;
+    border-radius: 8px;
+    background: #D0CACA;
+    border: none;
+}
+
+.containerRegister .checkOffers{
+    display:flex;
+    margin-bottom: 5px;
+}
+.containerRegister .checkOffers #offers{
+    width: 15px;
+}
+
+.containerRegister .wrapper-inputs input::placeholder, .checkOffers label{
+    color: #6F6565;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.containerLogin .submit{
+    display: flex;
+    width: 385px;
+    height: 57px;
+    padding: 7px 126px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    border: 8px solid #F95B2E;
+    background: #F95B2E;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.containerRegister .submit-register{
+    display: flex;
+    width: 390px;
+    height: 57px;
+    padding: 7px 120px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    border: 8px solid #2e53f9;
+    background:#2e53f9;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.redirection{
+    display: flex;
+    align-items: end;
+    color: #6F6565;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.containerRegister .redirection .redirectionLogin,.containerLogin .redirection .redirectionRegister{
+    margin-left: 10px;
+}
+
+.containerRegister .redirectionLogin:hover,.containerLogin .redirection .redirectionRegister:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media only screen and (min-width:320px) and (max-width:768px) {
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    .containerLogin{
+    display: flex;
+    width: 388px;
+    padding: 36px 0px;
+    flex-direction: column;
+    align-items: center;
+    gap: 38px;
+    }
+    .containerRegister{
+    display: flex;
+    width: 360px;
+    padding: 30px 0px;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    }
+    .containerLogin .wrapper-inputs input{
+    display: flex;
+    width: 315px;
+    padding: 19px 17px;
+    align-items: center;
+    gap: 10px;
+    }
+
+    .containerRegister .wrapper-inputs #registerForm{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+        justify-content: center;
+    }
+    .wrapper-inputs input{
+        display: flex;
+        width: 300px;
+        padding: 15px 15px;
+        align-items: center;
+    }
+    .containerRegister .checkOffers{
+        margin-right: 35px;
+    }
+
+    .containerLogin .submit{
+        width: 350px;
+    }
+    .containerRegister .submit-register{
+        display: flex;
+        width: 325px;
+        height: 47px;
+        padding: 7px 126px;
+
+    }
+    .containerRegister .redirection{
+        justify-content: flex-start;
+        margin: 5px 0 0 9px;
+        font-size: 11px;
+    }
+    .containerRegister .redirection .redirectionLogin{
+        margin-left:5px ;
+    }
+}
