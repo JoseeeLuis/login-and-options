@@ -6,7 +6,6 @@ function changeToLogin() {
     const changeLogin = document.querySelector(".redirectionLogin");
     
     changeLogin.addEventListener("click", function(evento) {
-        registerCard.style.transform = "translateX(250%)";
         registerCard.classList.remove("active");
         console.log("USTED CLICKEO");
         body.classList.add("login");
@@ -14,4 +13,17 @@ function changeToLogin() {
     });
 }
 
+function changeToRegister(){
+    const changeRegister= document.querySelector(".redirectionRegister");
+
+    changeRegister.addEventListener("click", function(event){
+        loginCard.classList.remove("active");
+        console.log("usted clickeo")
+        body.classList.remove("login");
+        registerCard.classList.add("active");
+
+    });
+}
+
+changeToRegister();
 changeToLogin();
