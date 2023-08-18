@@ -12,14 +12,12 @@ body{
     display: flex;
     justify-content: center;
     transition: all 1s ease;
-    height: 100vh;
-    width: 1424px;
+    align-items: center;
 
 }
 
 .login{
-    background: linear-gradient(180deg, #F95B2E 0%, #1E1E1E 100%);
-    
+    background: linear-gradient(180deg, #F95B2E 0%, #1E1E1E 100%);  
 }
 
 .containerLogin{
@@ -35,6 +33,10 @@ body{
     flex-shrink: 0;
     border-radius: 15px;
     background: #F3F3F3;
+}
+
+.containerLogin.active{
+    left: auto;
 }
 
 .containerRegister{
@@ -132,7 +134,7 @@ body{
     font-weight: 400;
     line-height: normal;
 }
-.containerRegister .redirection{
+ .redirection{
     display: flex;
     align-items: end;
     color: #6F6565;
