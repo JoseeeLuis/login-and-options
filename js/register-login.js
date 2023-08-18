@@ -8,7 +8,6 @@ function changeToLogin() {
     changeLogin.addEventListener("click", function(evento) {
         registerCard.style.transform = "translateX(250%)";
         registerCard.classList.remove("active");
-        loginCard.style.transform = "translateX(84%)"
         console.log("USTED CLICKEO");
         body.classList.add("login");
         loginCard.classList.add("active");
